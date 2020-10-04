@@ -1,6 +1,8 @@
 var currentDayEl = moment().format("dddd, MMMM Do");
 $("#currentDay").append(currentDayEl);
 
+//var containerEl = document.querySelector("#container");
+
 // var firstHour = moment().set('hour', 9).format("hA");
 // console.log(firstHour);
 // var lastHour = moment().set('hour', 17).format("hA");
@@ -57,12 +59,18 @@ var checkTime = function () {
                 loopedIndex = hourRange[j].index;
                 if (loopedIndex > currentIndex) {
                     //add past class
+                    $("#" + j).removeClass("past");
+                    $("#" + j).removeClass("present");
                     $("#" + j).addClass("future");
                 } if (loopedIndex === currentIndex) {
                     //add current class
+                    $("#" + j).removeClass("past");
+                    $("#" + j).removeClass("future");
                     $("#" + j).addClass("present");
                 } else if (loopedIndex < currentIndex) {
                      //add future class
+                    $("#" + j).removeClass("present");
+                    $("#" + j).removeClass("future");
                     $("#" + j).addClass("past");
                 };
             };
@@ -71,7 +79,29 @@ var checkTime = function () {
 };
 checkTime();
 
-    
+//
+var saveText = function(){
+    for(i = 0; i <hourRange.length; i++) {
+        console.log(i);
+        $("saveBtn",[i]).on("click", "saveBtn")
+        var textElement = $("textarea")[i].value;
+        console.log(textElement);
+        localStorage.setItem("user-toDo"+i, JSON.stringify(textElement));
+    };
+};
+
+var loadText = function(){
+    for(i = 0; i <hourRange.length; i++) {
+        console.log(i);
+        loadedText = localStorage.getItem("user-toDo"+i);
+        loadedText = JSON.parse(loadedText);
+        $("textarea")[i].value = loadedText;
+    }
+};
+
+loadText();
+
+$(".btnBorder").click(saveText);
 
 
-
+setInterval(checkTime,15000);
