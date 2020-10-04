@@ -48,8 +48,8 @@ var hourRange = [{
 
 //function that checks class "hour" to see if it is in the past, present or future
 var checkTime = function () {
-    //currentTime = moment().format("hA");
-    currentTime = "10AM"
+    currentTime = moment().format("hA");
+    //currentTime = "10AM"
     for (i = 0; i < hourRange.length; i++) {
         if (currentTime === hourRange[i].hour) {
             currentIndex = hourRange[i].index;
