@@ -34,7 +34,7 @@ This application uses j.query, moment.js and javascript to organize daily tasks 
 
 ## Link to deployed application
 
-
+https://frostyausty.github.io/WorkDayScheduler/
 
 ### Collaboration
 
