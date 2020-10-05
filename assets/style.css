@@ -41,6 +41,7 @@ textarea{
   border-top: 1px dashed #000000;
 }
 
+/*style for the current status of the time block*/
 .past {
   background-color: #d3d3d3;
   color: white;
@@ -56,6 +57,7 @@ textarea{
   color: white;
 }
 
+/*style for the save button */
 .saveBtn {
   border-left: 1px solid black;
   border-top-right-radius: 15px;
