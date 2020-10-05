@@ -1,15 +1,8 @@
+// create a variable for the current day to store in the header
 var currentDayEl = moment().format("dddd, MMMM Do");
 $("#currentDay").append(currentDayEl);
 
-//var containerEl = document.querySelector("#container");
-
-// var firstHour = moment().set('hour', 9).format("hA");
-// console.log(firstHour);
-// var lastHour = moment().set('hour', 17).format("hA");
-// console.log(lastHour);
-// var hour = moment().format("hA");
-// console.log(hour);
-
+// array to individually identify each time block
 var hourRange = [{
     hour:"9AM",
     index: 0
@@ -48,10 +41,10 @@ var hourRange = [{
 }]
 
 
-//function that checks class "hour" to see if it is in the past, present or future
+// function that checks class "hour" to see if it is in the past, present or future
+// then assigns styling based on the current time
 var checkTime = function () {
     currentTime = moment().format("hA");
-    //currentTime = "10AM"
     for (i = 0; i < hourRange.length; i++) {
         if (currentTime === hourRange[i].hour) {
             currentIndex = hourRange[i].index;
@@ -79,7 +72,7 @@ var checkTime = function () {
 };
 checkTime();
 
-//
+// function to save the to do tasks in local storage when the save button is clicked
 var saveText = function(){
     for(i = 0; i <hourRange.length; i++) {
         console.log(i);
@@ -90,6 +83,7 @@ var saveText = function(){
     };
 };
 
+// function to pull data from local storage so users can revist/refresh the page and keep the tasks
 var loadText = function(){
     for(i = 0; i <hourRange.length; i++) {
         console.log(i);
@@ -98,10 +92,10 @@ var loadText = function(){
         $("textarea")[i].value = loadedText;
     }
 };
-
 loadText();
 
+//event that starts the save function when the save button is clicked 
 $(".btnBorder").click(saveText);
 
-
+//checks the current time every 15 seconds to update the class for the time slots based on current time
 setInterval(checkTime,15000);

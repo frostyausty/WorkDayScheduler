@@ -23,14 +23,16 @@
   </head>
 
   <body>
+    <!--title and current day-->
     <header class="jumbotron">
       <h1 class="display-3">Work Day Scheduler</h1>
       <p class="lead">A simple calendar app for scheduling your work day</p>
       <p id="currentDay" class="lead"></p>
     </header>
 
+    <!--container that holds the time slots -->
     <div class="container" id="container">
-
+    <!--time slot for 9AM, includes divs for text input and save button-->
       <div class = "row">
         <div class = "col-1 hour">
           9AM 
@@ -43,6 +45,7 @@
         </div>
       </div>
 
+      <!--time slot for 10AM-->
       <div class = "row">
         <div class = "col-1 hour">
           10AM 
@@ -55,6 +58,7 @@
         </div>
       </div>
 
+      <!--time slot for 11AM, and so on-->
       <div class = "row">
         <div class = "col-1 hour">
           11AM 
@@ -141,6 +145,7 @@
 
     </div>
 
+    <!--script files for the application- jquery, moment.js and script.js file-->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
     <script src="./assets/script.js"></script>
