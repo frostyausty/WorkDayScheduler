@@ -4,7 +4,7 @@ I created a work day scheduling tool to help someone stay organized throughout t
 
 ## Description
 
-This application uses j.query, moment.js and javascript to organize daily tasks into time blocks. The application stores the data so the user can come back and add, remove or update their schedule. As time goes on the scheduler changes colors based on present, past and future tasks. 
+This application uses bootstrap, j.query, moment.js and javascript to organize daily tasks into time blocks. The application stores the data so the user can come back and add, remove or update their schedule. As time goes on the scheduler changes colors based on present, past and future tasks. 
 
 ## Screenshots 
 
